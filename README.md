@@ -6,12 +6,15 @@ Feel free to create a pull request.
 
 ## Progress
 
+- [ ] C++
 - [ ] Unix
 - [ ] Terminal
 - [ ] Git
 - [ ] Shell Scripting
 - [ ] Docker
 - [ ] Vim
+
+## C++
 
 ## Unix
 
@@ -49,3 +52,4 @@ The Docker [getting-started](https://docs.docker.com/get-started/02_our_app/) tu
 
 Thanks to the following people for contributing to this repository:
 
+- [Clemen Kok](https://clemenkok.com/) (BEng'24)
