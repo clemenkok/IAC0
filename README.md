@@ -6,13 +6,13 @@ Feel free to create a pull request.
 
 ## Progress
 
-- [ ] C++
-- [ ] Unix
-- [ ] Terminal
-- [ ] Git
-- [ ] Shell Scripting
-- [ ] Docker
-- [ ] Vim
+- [ ] [C++](#c)
+- [ ] [Unix](#unix)
+- [ ] [Terminal](#terminal)
+- [ ] [Git](#git)
+- [ ] [Shell Scripting](#shell-scripting)
+- [ ] [Docker](#docker)
+- [ ] [Vim](#vim)
 
 ## C++
 
