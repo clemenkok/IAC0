@@ -4,7 +4,16 @@ There are several important skills that are needed to succeed in second year. Th
 
 Feel free to create a pull request.
 
-## Unix (+WSL)
+## Progress
+
+- [ ] Unix
+- [ ] Terminal
+- [ ] Git
+- [ ] Shell Scripting
+- [ ] Docker
+- [ ] Vim
+
+## Unix
 
 ## Terminal
 
@@ -36,4 +45,7 @@ The Docker [getting-started](https://docs.docker.com/get-started/02_our_app/) tu
 
 ## Vim (Stretch)
 
+## Contributor Appreciation
+
+Thanks to the following people for contributing to this repository:
 
