@@ -6,6 +6,7 @@ Feel free to create a pull request.
 
 ## Progress
 
+- [ ] [General Advice](#general-advice)
 - [ ] [C++](#c)
 - [ ] [Unix](#unix)
 - [ ] [Terminal](#terminal)
@@ -13,6 +14,8 @@ Feel free to create a pull request.
 - [ ] [Shell Scripting](#shell-scripting)
 - [ ] [Docker](#docker)
 - [ ] [Vim](#vim)
+
+## General Advice
 
 ## C++
 
