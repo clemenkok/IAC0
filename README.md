@@ -1,6 +1,6 @@
 # IAC0: A Repository to plug the missing gaps
 
-There are several important skills that are needed to succeed in second year. This repository contains several tutorials on how to pick them up. It is recommended that you spend some time learning the basics below before the first IAC Lab.
+There are several important skills that are needed to succeed in second year. This repository contains several tutorials on how to pick them up. It is recommended that you spend some time learning the basics below as the year goes by. Some are relevant for the IAC lab (Linux, Git), so check them out before the first lab.
 
 Feel free to create a pull request.
 
