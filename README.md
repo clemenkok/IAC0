@@ -34,6 +34,10 @@ Refer to the table below to find out what langauges / frameworks you will need t
 
 ## C++ and OOP
 
+Prior to the commencement of second year, familiarising yourself with C++ features not covered in Year 1 programming such as smart pointers, maps and lambda functions allows for a smoother transition to the more advanced topics covered.
+
+### Smart Pointers
+
 ## Linux and the Command Line
 
 ## Scripting
