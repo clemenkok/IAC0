@@ -1,4 +1,4 @@
-# Shell cheat sheet
+# Shell Cheat Sheet
 
 This is a cheat sheet of common commands you'll encounter during and after uni. The goal isn't to be comprehensive, but to help you get familiar with terminal commands and scripting quickly and without too much googling. 
 
