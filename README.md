@@ -7,7 +7,9 @@ Feel free to create a pull request.
 ## Progress
 
 - [ ] [General Advice](#general-advice)
-- [ ] [C++ and OOP](#cpp-and-oop)
+- [ ] [C++ and OOP](/C++.md)
+- [ ] [Intro to JavaScript](/JavaScript.md)
+- [ ] [Using the Shell](/shell_cheat_sheet.md)
 - [ ] [Linux and the Command Line](#linux-and-the-command-line)
 - [ ] [Scripting](#scripting)
 - [ ] [Git](#git)
