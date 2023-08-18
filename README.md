@@ -50,3 +50,4 @@ Refer to the table below to find out what langauges / frameworks you will need t
 Thanks to the following people for contributing to this repository:
 
 - [Clemen Kok](https://clemenkok.com/) (BEng'24)
+- Hrishikesh Venkatesh (MEng'26)
