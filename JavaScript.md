@@ -2,6 +2,11 @@
 
 This page details some core concepts and syntax details to begin developing your own website using HTML, CSS and JavaScript. Learning everything here should allow you to go on to learn an industry-standard framework such as React, Angular or Vue to develop more complex websites easily and efficiently. As you will have primarily learnt C++ in first year, there are several annotations pertaining to similar features in C++, and a base level understanding of operators, string concatenation and loops is assumed, and not covered, due to its' similarity to C++.
 
+Key resource I personally used to learn: 
+
+- freeCodeCamp: JavaScript Algorithms and Data Structures, ES6; these should be mostly new content to you, as long as you have a good base knowledge of C++
+- SuperSimpleDev's JavaScript Full Course, you should be able to skip through the first part until around halfway at the very least.
+
 ## JSON and localStorage
 
 ### JSON and localStorage are functions contained within JavaScript itself, used for compatibility and saving values through different instances of the same webpage respectively

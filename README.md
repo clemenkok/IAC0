@@ -9,6 +9,7 @@ Feel free to create a pull request.
 - [ ] [General Advice](#general-advice)
 - [ ] [C++ and OOP](/C++.md)
 - [ ] [Intro to JavaScript](/JavaScript.md)
+- [ ] [Data Structures and Algorithms] (/DSandA.md)
 - [ ] [Using the Shell](/shell_cheat_sheet.md)
 - [ ] [Linux and the Command Line](#linux-and-the-command-line)
 - [ ] [Scripting](/Scripting.md)
@@ -20,9 +21,12 @@ Feel free to create a pull request.
 ## General Advice
 
 - Start your internship hunt early (like right now). Use a popular CV template such as [Jake's CV Template](https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs).  
+
 - Learn some LaTeX - will come in handy for report writing.
 
-Refer to the table below to find out what langauges / frameworks you will need to learn:  
+- "Do LeetCode": this is some of **the worst advice** I think I received when attempting aptitude tests for internships using just my knowledge from first year's C++ content. I would highly recommend picking up JavaScript and/or Python, as these are guaranteed to be options to use for the aptitude tests, whereas I found C++ wasn't *always* there; in addition to this, JavaScript and Python are easier syntactically, allowing you to focus on the data structures and algorithms questioned. Following on from this, make sure to deepen your knowledge on structures and algorithms, *then* proceed to use Hackerrank, then answer as many LeetCode questions as you want, otherwise I found myself getting frustrated and just looking at the answers and solutions, which clearly won't help you in the tests.
+
+Refer to the table below to find out what languages / frameworks you will need to learn:  
 |Modules|Technologies|
 |---|---|
 |ELEC50006 Discrete Mathematics|Python|
@@ -35,12 +39,6 @@ Refer to the table below to find out what langauges / frameworks you will need t
 |ELEC50010 Instruction Architectures and Compilers|Autumn part - SystemVerilog, C++. Spring part - C++, Flex, Bison (brush up on OOP)|
 
 ## Linux and the Command Line
-
-
-
-
-
-
 
 
 
