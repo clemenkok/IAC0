@@ -9,7 +9,7 @@ Feel free to create a pull request.
 - [ ] [General Advice](#general-advice)
 - [ ] [C++ and OOP](/C++.md)
 - [ ] [Intro to JavaScript](/JavaScript.md)
-- [ ] [Data Structures and Algorithms] (/DSandA.md)
+- [ ] [Data Structures and Algorithms](/DSandA.md)
 - [ ] [Using the Shell](/shell_cheat_sheet.md)
 - [ ] [Linux and the Command Line](#linux-and-the-command-line)
 - [ ] [Scripting](/Scripting.md)
