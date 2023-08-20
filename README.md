@@ -22,7 +22,7 @@ Feel free to create a pull request.
 
 - Start your internship hunt early (like right now). Use a popular CV template such as [Jake's CV Template](https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs).  
 
-- Learn some LaTeX - will come in handy for report writing.
+- Learn some LaTeX - will come in handy for report writing, as many will have realised in the first year project.
 
 - "Do LeetCode": this is some of **the worst advice** I think I received when attempting aptitude tests for internships using just my knowledge from first year's C++ content. I would highly recommend picking up JavaScript and/or Python, as these are guaranteed to be options to use for the aptitude tests, whereas I found C++ wasn't *always* there; in addition to this, JavaScript and Python are easier syntactically, allowing you to focus on the data structures and algorithms questioned. Following on from this, make sure to deepen your knowledge on structures and algorithms, *then* proceed to use Hackerrank, then answer as many LeetCode questions as you want, otherwise I found myself getting frustrated and just looking at the answers and solutions, which clearly won't help you in the tests.
 
