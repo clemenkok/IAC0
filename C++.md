@@ -26,3 +26,4 @@ These pointers cannot be copied, as that would result in multiple pointers think
 **Shared pointers** tell whether they are the final pointer to the resource using the resources' **reference count;** this increments and decrements due to shared pointer constructors and destructors respectively.
 
 **NOTE:** Copy constructors do both.
+
