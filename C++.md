@@ -54,9 +54,9 @@ Custom deleters can be function objects, containing arbritrary amounts of data -
 
 std::make_shared **always** creates a control block on the heap; a control block is a larger data structur containing the reference count. There are a set of rules for control block creation, including:
 
-    - std::make_shared always creates a control block, and manufactures a new object to point to.
-    - A control block is created when a shared pointer is constructed from a unique pointer.
-    - The shared pointer assume ownership of the pointed to object, and the unique pointer is set to NULL.
+- std::make_shared always creates a control block, and manufactures a new object to point to.
+- A control block is created when a shared pointer is constructed from a unique pointer.
+- The shared pointer assume ownership of the pointed to object, and the unique pointer is set to NULL.
 
 Shared pointer constructors taking shared or weak pointers as constructor arguments **do not** create a control block, but instead **share** the control block of the argument.
 
@@ -64,10 +64,10 @@ These rules result in the consequence of not being able to construct more than o
 
 Key notes on shared pointers:
 
-    - They are twice the size of a raw pointers, incur overhead for control blocks and require atomic reference count manipulations.
-    - They offer convenience approaching that of garbage collection for the shared lifetime management of arbritrary objects.
-    - Default resource deletion is via delete, but custom deleters are supported.
-    - Avoid created shared pointers from raw pointers.
+- They are twice the size of a raw pointers, incur overhead for control blocks and require atomic reference count manipulations.
+- They offer convenience approaching that of garbage collection for the shared lifetime management of arbritrary objects.
+- Default resource deletion is via delete, but custom deleters are supported.
+- Avoid created shared pointers from raw pointers.
 
 ### std::weak_ptr
 
