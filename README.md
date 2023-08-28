@@ -38,14 +38,10 @@ Refer to the table below to find out what languages / frameworks you will need t
 |ELEC50009 Information Processing|Depends on your subsystem. If you're doing the FPGA part, you need to know how to use Quartus, C, SystemVerilog and UART (so Python). If you're doing a game, probably Unity/C# (some people used common webdev stacks too). Cloud/Databases - AWS, SQL, Python.|
 |ELEC50010 Instruction Architectures and Compilers|Autumn part - SystemVerilog, C++. Spring part - C++, Flex, Bison (brush up on OOP)|
 
-## Linux and the Command Line
-
-
-
-
 ## Contributor Appreciation
 
 Thanks to the following people for contributing to this repository:
 
 - [Clemen Kok](https://clemenkok.com/) (BEng'24)
 - Hrishikesh Venkatesh (MEng'26)
+- Aranya Gupta (MEng'25)

@@ -27,12 +27,12 @@ Usage: `touch file.txt` - creates a new text file called file. To create a file 
 
 ### `cd` \<directory> - Change directory
 Changes the current directory from one to another. \
-Usage: `cd folder` - changes the current directory to folder. This can be seen on the command line as the directory will change from `~` to `~/folder`. \
+Usage: `cd folder` - changes the current directory to folder. This can be seen on the command line as the directory will change from `~` (home directory) to `~/folder`. \
 `cd ..` - leaves current folder ie moves from `~/folder` to `~`. You can move to any arbitrary folder by using the full path: `cd /path/to/folder`. \
 `cd` with no arguments - moves you to the home directory `~`. \
 You can keep track of the current directory from the command line; it will show something like `aranyagupta@aranyagupta:~/iac0/IAC0` before terminal input. 
 
-### rm - Remove
+### `rm` - Remove
 Delete any file. \
 **WARNING:** This is irreversible, unless you have initialised a git repository in the current directory. 
 
@@ -51,7 +51,7 @@ Most instructions can be executed on the command line by typing in the instructi
 
 For example, to run a python script, use `python script.py`. To compile a C file using gcc, use `gcc -c file.c`, and to execute the generated binary, use `./file`.
 
-### `source \<shell_script>.sh` - runs a shell script
+### `source <shell_script>.sh` - runs a shell script
 A shell script can run several instructions one after the other without writing them out separately line by line. For example, you can compile several C/C++ files and then link them together. A shell script may look as such:
 
 **test_main.sh** \
@@ -86,3 +86,15 @@ Removes a previously installed package.
 
 ### `sudo update-alternatives --config \<package_name>` - manage package versions
 If you've installed different versions of a package, such as gcc or Python, you can choose which version to use using this command. 
+
+### `sudo chmod/chown` - changes ownership or permissions of a file/folder
+Some programs you write may need to edit system files or start system services, such as in cloud programming when setting up a web server. These may require a file/folder to have elevated permissions, which can be accomplished by sudo chmod/chown.
+
+### `ctrl-r` - Reverse lookup
+
+Not explicitly a shell instruction, but a useful tool: looks up prior instructions and autofills them into the command line. Useful for if you've executed an important instruction a while ago, or executed similar or long instructions and can't be bothered to retype them.
+
+Usage: `ctrl-r` followed by typing out the a few characters of the instruction you want to execute. If several instructions match, repeatedly pressing `ctrl-r` will cycle through them. Press enter once you've found the correct instruction to execute it. 
+
+NB: If the you executed something relatively recently, repeatedly pressing the up arrow will go through the most recently executed instructions.
+
