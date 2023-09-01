@@ -72,3 +72,8 @@ Key notes on shared pointers:
 ### std::weak_ptr
 
 Use weak pointers for pointers similar to shared pointers, which can dangle. They don't affect the reference count of the resource they point to, and they don't own the resource they point to. They are not standalone pointers, and can only be created from shared pointers. Weak pointers that dangle are said to have **expired**.
+
+
+## Lambda Functions
+
+A lambda function is an **anonymous function** that can be used to replace a function pointer. They are useful for **one-off functions** that are only used once, and are not required to be named.
