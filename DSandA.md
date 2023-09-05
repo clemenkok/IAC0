@@ -8,7 +8,9 @@
   - [Tuples](#tuples)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
-
+  - [Sets](#sets)
+  - [Stacks](#stacks)
+  - [Queues](#queues)
 
 ## Tuples
 
@@ -71,8 +73,75 @@ print(student_grades["John"]) # prints "80"
 print(student_grades.values()) # prints "dict_values([80, 90, 100])"
 
 ``` 
+In essence, a dictionary is just a special variety of a set, where each element in the set is a tuple of two elements, the key and the value. This will become clearer once you learn about sets.
 
 
+## Sets
+
+Sets are data structures similar to lists, but they are unordered, and cannot contain duplicates, rendering them useful for common interview questions such as Valid Anagram or Contains Duplicate. They are defined using curly brackets `{}` and are indexed using square brackets `[]`, the same as dictionaries, the interpreter deciphers whether what you are defining is a set or dictionary based on what is inside the curly braces. They are mutable, meaning that they can be changed once they are created. 
+
+```
+# Creating a set
+
+days_of_the_week = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+
+# Modifying a set
+
+days_of_the_week[0] = "Mon" # this is something that will work on a set, as they are mutable
+
+# Accessing a set
+
+print(days_of_the_week[0]) # prints "Monday"
+
+```
+
+## Stacks
+
+Stacks are "first in, last out" data structures, meaning that the first element to be added to the stack is the last element to be removed from the stack. They are useful for storing data that needs to be accessed in reverse order, such as a list of webpages visited, or a list of commands entered. They are defined using the `stack` class, and are indexed using square brackets `[]`. They are mutable, meaning that they can be changed once they are created. You should have encountered them in first year DECA.
+
+```
+# Creating a stack
+
+stack = []
+
+# Adding to a stack
+
+stack.append("Monday")
+
+# Removing from a stack
+
+stack.pop() # removes the last element from the stack, in this case "Monday"
+
+# Accessing a stack
+
+print(stack[0]) # prints "Monday"
+
+```
+
+## Queues
+
+Queues are "first in, first out" data structures, much like their real-life counterparts. They are useful for storing data that needs to be accessed in the order it was added, such as a list of people waiting in line. They are defined using the `queue` class, and are indexed using square brackets `[]`. They are mutable, meaning that they can be changed once they are created.
+
+```
+# Creating a queue
+
+queue = []
+
+# Adding to a queue
+
+queue.append("Monday")
+
+# Removing from a queue
+
+queue.pop(0) # removes the first element from the queue, in this case "Monday"
+
+# Accessing a queue
+
+print(queue[0]) # prints "Monday"
+
+```
+
+As we can see from the syntax, in Python, stacks and queues are just lists with some extra functionality. This is because Python is a high-level language, and the developers of Python have already implemented these data structures for us. In lower-level languages such as C++, we would have to implement these data structures ourselves, which is why it is important to understand how they work.
 
 
 
