@@ -19,7 +19,7 @@
     - [Sliding Window](#sliding-window)
     - [Binary Search](#binary-search)
     - [Depth and Breadth First Search](#depth-and-breadth-first-search)
-    - [Djikstra's Algorithm](#djikstras-algorithm)
+    - [Dijkstra's Algorithm](#dijkstras-algorithm)
 
 ## Data Structures
 
@@ -195,36 +195,75 @@ The binary search algorithm involves reducing the size of your set in half with 
 Set up two values left and right as 1 and `num`, and while left is less than right, we can calculate the midpoint. Now if the midpoint squared is less than num, we can set left to the midpoint, else if it is greater, we set right to the midpoint, and repeat. If the midpoint is neither greater nor less than, it is the num, and we can return True. We return false when we leave the while loop.
 
 ```
-def isPerfectSquare(self, num: int) -> bool:
-  l, r = 1, num
+  def isPerfectSquare(self, num: int) -> bool:
+    l, r = 1, num
 
-  while l <= r:
-    mid = (l + r) // 2 # the double slash is integer division
-    if mid * mid < num:
-      l = mid + 1
-    elif mid * mid > num:
-      r = mid - 1
-    else:
-      return True
-  return False
+    while l <= r:
+      mid = (l + r) // 2 # the double slash is integer division
+      if mid * mid < num:
+        l = mid + 1
+      elif mid * mid > num:
+        r = mid - 1
+      else:
+        return True
+    return False
 ```
 
 
 
 ### Depth and Breadth First Search
 
-These are the two fundamental search algorithms that many other graph algorithms are built from, such as Djikstra's Algorithm, Prim's Algorithm etc, so they are vital to learn for use in trees and graphs.
+These are the two fundamental search algorithms that many other graph algorithms are built from, such as Djikstra's Algorithm, Prim's Algorithm etc, so they are vital to learn for use in trees and graphs. A common problem using the Depth First Search is Inverting a Binary Tree
 
+**Invert a binary tree (Depth First Search)**
 
+This involves recursion, as all the sub branches also need to be inverted. When the function is called on the root node, we recursively run the said function on the left and right subtree.
 
+```
+  def(invertTree(self, root: TreeNode) -> TreeNode)
+    if not root:
+      return None
+    
+    tmp = root.left
+    root.left = root.right
+    root.right = tmp # swapping branches
 
+    self.invertTree(root.left) # recursive call on the left branch 
+    self.invertTree(root.right) # " right branch
+    return root
+```
 
+### Dijkstra's Algorithm
 
+Dijkstra's algorithm is commonly used to solve graph problems where you need to find the shortest path, such as Network Delay Time, as explained below. This can be simplified to a Breadth First Search, using a minimum heap.
 
+**You are given a network of n nodes, labeled from 1 to n. You are also given times, a list of travel times as directed edges times[i] = (u, v, w) where u is the source node, v is the target node, and w is the time taken for a signal to travel from source to target. We are sending a signal from a node k, return the time taken for all n nodes to receive the signal, else return -1.**
 
-### Djikstra's Algorithm
+The time taken for all n nodes is the same as the maximum time taken for the furthest node to receive the signal. We use a breadth first search to find the shortest path, by adding the nodes we can visit to a frontier, which is a min heap in this case. We visit the node with the shorter path. The minimum heap has a path *key* and a node *value*. Once we add the two nodes connected to the initial node, we can pop off the initial node, as we have already visited it. We assign the **total** path count from the initial node in the heap, rather than just the previous path taken.
 
+We can then pop the value in the heap with the smallest path key, and return the key of it.
 
+```
+  def networkDelayTime(self, times: List[List[int]], n: int, k; int) -> int:
+    edges = collection.defaultdict(list)
+    for u, v, w in times:
+      edges[u].append((v,w))
+
+    minHeap = [(0,k)]
+    visit = set()
+    t = 0
+    while minHeap:
+      w1, n1 = heapq.heappop(minHeap)
+      if n1 in visit: # already been visited?
+        continue
+      visit.add(n1)
+      t = max(t, w1) # w1 is the weight (path cost)
+
+      for n2, w2 in edges[n1]:
+        if n2 not in visit: # not visited yet?
+          heapq.heappush(minHeap, (w1 + w2, n2))
+    return t if len(visit) == n else -1
+```
 
 
 
