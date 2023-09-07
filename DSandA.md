@@ -14,8 +14,12 @@
     - [Sets (aka Hashsets)](#sets-aka-hashsets)
     - [Stacks](#stacks)
     - [Queues](#queues)
+    - [Heap](#heap)
   - [Algorithms](#algorithms)
-    - [](#)
+    - [Sliding Window](#sliding-window)
+    - [Binary Search](#binary-search)
+    - [Depth and Breadth First Search](#depth-and-breadth-first-search)
+    - [Djikstra's Algorithm](#djikstras-algorithm)
 
 ## Data Structures
 
@@ -150,9 +154,75 @@ print(queue[0]) # prints "Monday"
 
 As we can see from the syntax, in Python, stacks and queues are just lists with some extra functionality. This is because Python is a high-level language, and the developers of Python have already implemented these data structures for us. In lower-level languages such as C++, we would have to implement these data structures ourselves, which is why it is important to understand how they work.
 
+### Heap
+
+Heaps are useful data structures to implement all sorts of algorithms. Heaps can be built in O(n) if all the values are known ahead of time.
+
 ## Algorithms
 
-###  
+### Sliding Window
+
+The sliding window algorithm uses two pointers to iterate through an array. A common problem that can be solved with this algorithm is the basic buy/sell stock problem, where the aim is to buy at it's lowest and sell at it's highest, assuming you are only permitted to make one transaction.
+
+Following these criteria, we can tell that, in it's simplest terms, we want to take the point at which the difference between the left (buy) and right (sell) pointers are the highest. To do this, we can say that if the right pointer is lower than the left pointer, we just move the left pointer across, as there is no reason to buy when the stock is due to drop in value. 
+
+However if the right pointer is higher than the left, we can store said value in a variable `max_profit`, provided the difference is greater than the existing value. At this point, we leave the left pointer where it is and move the right pointer incrementally to find the highest point, where we can sell.
+
+```
+  def maxProfit(self, prices: List[int]) -> int:
+    l, r = 0, 1
+    maxP = 0
+
+    while r < len(prices):
+      if prices[l] < prices[r]:
+        profit = prices[r] - profit[l]
+        maxP = max(maxP, profit) # no need for a comparison if statement
+      else:
+        l = r
+      r += 1
+
+    return maxP
+
+```
+
+
+### Binary Search
+
+The binary search algorithm involves reducing the size of your set in half with every search. This is done by comparing the size of the value selected with the value you are searching for, then discarding the half of the set which is not relevant. The binary search is used for the valid perfect square problem.
+
+**Given a positive integer num, write a function that returns True if the num is a perfect square, else False. Do not use built-in library fns such as sqrt.**
+
+Set up two values left and right as 1 and `num`, and while left is less than right, we can calculate the midpoint. Now if the midpoint squared is less than num, we can set left to the midpoint, else if it is greater, we set right to the midpoint, and repeat. If the midpoint is neither greater nor less than, it is the num, and we can return True. We return false when we leave the while loop.
+
+```
+def isPerfectSquare(self, num: int) -> bool:
+  l, r = 1, num
+
+  while l <= r:
+    mid = (l + r) // 2 # the double slash is integer division
+    if mid * mid < num:
+      l = mid + 1
+    elif mid * mid > num:
+      r = mid - 1
+    else:
+      return True
+  return False
+```
+
+
+
+### Depth and Breadth First Search
+
+These are the two fundamental search algorithms that many other graph algorithms are built from, such as Djikstra's Algorithm, Prim's Algorithm etc, so they are vital to learn for use in trees and graphs.
+
+
+
+
+
+
+
+
+### Djikstra's Algorithm
 
 
 
