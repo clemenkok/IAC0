@@ -42,6 +42,6 @@ Refer to the table below to find out what languages / frameworks you will need t
 
 Thanks to the following people for contributing to this repository:
 
-- [Clemen Kok](https://clemenkok.com/) (BEng'24)
+- [Clemen Kok](https://clemenkok.com/) (MEng'25)
 - Hrishikesh Venkatesh (MEng'26)
 - Aranya Gupta (MEng'25)
