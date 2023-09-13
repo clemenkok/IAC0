@@ -11,7 +11,6 @@ Feel free to create a pull request.
 - [ ] [**Intro to JavaScript**](/JavaScript.md)
 - [ ] [**Data Structures and Algorithms**](/DSandA.md)
 - [ ] [**Using the Shell**](/shell_cheat_sheet.md)
-- [ ] [**Linux and the Command Line**](#linux-and-the-command-line)
 - [ ] [**Scripting**](/Scripting.md)
 - [ ] [**Git**](/Git.md)
 - [ ] [**Docker**](/Docker.md)
@@ -24,7 +23,7 @@ Feel free to create a pull request.
 
 - Learn some LaTeX - will come in handy for report writing, as many will have realised in the first year project.
 
-- "Do LeetCode": this is some of **the worst advice** I think I received when attempting aptitude tests for internships using just my knowledge from first year's C++ content. I would highly recommend picking up JavaScript and/or Python, as these are guaranteed to be options to use for the aptitude tests, whereas I found C++ wasn't *always* there; in addition to this, JavaScript and Python are easier syntactically, allowing you to focus on the data structures and algorithms questioned. Following on from this, make sure to deepen your knowledge on structures and algorithms, *then* proceed to use Hackerrank, then answer as many LeetCode questions as you want, otherwise I found myself getting frustrated and just looking at the answers and solutions, which clearly won't help you in the tests.
+- On Algorithmic Exercises which may be tested as part of job interviews (i.e. Leetcode): learn the big picture first (what are the patterns - see [here](https://seanprashad.com/leetcode-patterns/), what are the data structures you need - queue, linked list, stack, hash map, array, and many more, what are the algorithms you need - DFS, BFS, sorts and many more) and then use a programming language of choice to implement and tackle these problems. C++ may not be available on every assessment site while Python should be available on all of them (not to mention easier to code out - think about how'd you implement a dictionary and a hash map in C++). That said, C++ is mandatory for certain job roles which require high-performance, so if you are targeting those roles do brush up on C++ as well as C++ internals (standard library, memory management). Do [Neetcode 150](https://neetcode.io/roadmap).  
 
 Refer to the table below to find out what languages / frameworks you will need to learn:  
 |Modules|Technologies|
