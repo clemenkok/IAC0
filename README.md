@@ -23,7 +23,9 @@ Feel free to create a pull request.
 
 - Learn some LaTeX - will come in handy for report writing, as many will have realised in the first year project.
 
-- On Algorithmic Exercises which may be tested as part of job interviews (i.e. Leetcode): learn the big picture first (what are the patterns - see [here](https://seanprashad.com/leetcode-patterns/), what are the data structures you need - queue, linked list, stack, hash map, array, and many more, what are the algorithms you need - DFS, BFS, sorts and many more) and then use a programming language of choice to implement and tackle these problems. C++ may not be available on every assessment site while Python should be available on all of them (not to mention easier to code out - think about how'd you implement a dictionary and a hash map in C++). That said, C++ is mandatory for certain job roles which require high-performance, so if you are targeting those roles do brush up on C++ as well as C++ internals (standard library, memory management). Do [Neetcode 150](https://neetcode.io/roadmap). Computational Thinking takes time, and is something that you can't brute force overnight. But, more practice certainly helps.    
+- On Algorithmic Exercises which may be tested as part of job interviews (i.e. Leetcode): learn the big picture first (what are the patterns - see [here](https://seanprashad.com/leetcode-patterns/), what are the data structures you need - queue, linked list, stack, hash map, array, and many more, what are the algorithms you need - DFS, BFS, sorts and many more) and then use a programming language of choice to implement and tackle these problems. C++ may not be available on every assessment site while Python should be available on all of them (not to mention easier to code out - think about how'd you implement a dictionary and a hash map in C++). That said, C++ is mandatory for certain job roles which require high-performance, so if you are targeting those roles do brush up on C++ as well as C++ internals (standard library, memory management). Do [Neetcode 150](https://neetcode.io/roadmap). Computational Thinking takes time, and is something that you can't brute force overnight. But, more practice certainly helps.
+  
+- The only major thing that you will need to pick up yourself before 3rd year Modules at the DoC would be Operating Systems. Some basic concepts (virtual memories and page tables) are covered in IAC, but you will need to read the rest yourself (scheduling, more in-depth virtualisation and file systems). I found the notes over [here](https://github.com/lin-e/imperial-revision) quite useful; there's also the famous [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/).     
 
 Refer to the table below to find out what languages / frameworks you will need to learn:  
 |Modules|Technologies|
@@ -44,3 +46,5 @@ Thanks to the following people for contributing to this repository:
 - [Clemen Kok](https://clemenkok.com/) (MEng'25)
 - Hrishikesh Venkatesh (MEng'26)
 - Aranya Gupta (MEng'25)
+
+Feel free to submit a PR!
