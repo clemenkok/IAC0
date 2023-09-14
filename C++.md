@@ -2,6 +2,20 @@
 
 Prior to the commencement of second year, familiarising yourself with C++ features not covered in Year 1 programming such as smart pointers, maps and lambda functions allows for faster progress in the Instruction Architectures and Compilers module, as well as providing a solid base for software development in industry.
 
+A lot of the content in this section will be more easily understood if you read the Key Notes at the end, especially for RAII, as they were written hand-in-hand.
+
+## Contents
+- [C++ and OOP](#c-and-oop)
+  - [Contents](#contents)
+  - [Smart Pointers](#smart-pointers)
+    - [std::unique\_ptr](#stdunique_ptr)
+    - [std::shared\_ptr](#stdshared_ptr)
+    - [std::weak\_ptr](#stdweak_ptr)
+  - [Lambda Functions](#lambda-functions)
+  - [RAII](#raii)
+  - [Key Notes on C++ and Compilers:](#key-notes-on-c-and-compilers)
+  
+
 ## Smart Pointers
 
 There are four types of smart pointer in modern C++:
@@ -77,3 +91,81 @@ Use weak pointers for pointers similar to shared pointers, which can dangle. The
 ## Lambda Functions
 
 A lambda function is an **anonymous function** that can be used to replace a function pointer. They are useful for **one-off functions** that are only used once, and are not required to be named.
+
+NOTE: still to complete
+
+## R-values and L-values
+
+R-values can be thought of as temporary objects that can't be assigned a value, whereas l-values can be thought of as an object to which you *can* assign a value. 
+
+Expressions that refer to memory locations are "l-values" and if those locations are modifiable, they are "modifiable l-values". L-values represents a storage region's "locator" value or a "left" value, implying that it can appear on the left of the equal sign. 
+
+The term "r-value" is sometimes used to descrive the value of an expression and to distinguish it from an l-value, however you need to keep in mind **all l-values are r-values, but not all r-values are l-values.**
+
+## RAII
+
+In depth video on RAII: https://www.youtube.com/watch?v=7Qgd9B1KuMQ - from which a lot of the notes are taken
+
+**Resource Acquistiom is Initialization, is a C++ programming technique that binds the life cycle of a resource that must be acquired before use to the lifetime of an object.** Some resources this applies to includes allocated heap memory, thread of execution, open socket, open file, locked mutex, disk space or database collection - anything that exists in limited supply.
+
+More generally, it is the principle that there is some *explicit* action that we need to take in the program in order to *free* the resource - think how you deleted all the pointers in Assignments 2 & 3 in Year 1, using `delete[]`.
+
+Hence, if you class directly manages some kind of resource (like a raw pointer), then you should hand-write these three special member functions:
+- A **destructor** to free the resource
+- A **copy constructor** to copy the resource
+- A **copy assignment operator** to free the left-hand resource and copy the right-hand one
+
+Use the copy-and-swap idiom to implement assignment; this is done to prevent issues when self-copying e.g. `v = v`. We make a **complete** local copy of the right-hand side, *prior* to the first modification to `this` object. This matters even more when writing templated or recursive data structures.
+
+Destructors help us write code that is robust against exceptions, as they make the runtime look "up the call stack" until it finds a suitable `catch` handler for the type of exception being thrown. If it finds one, the runtime performs **stack unwinding** where for every local scope between the throw and catch handler, the runtime calls the destructors of all local variables in the scope.
+
+To avoid leaks, place all **cleanup** code in **destructors.**
+
+Below, you can see that here the code calls `new` but fails to call `delete` when an exception is thrown, as stack unwinding, which is aforementioned, skips us down to the `catch` meaning we don't execute the skipped over line. This means this is not good RAII code, as it leaks memory.
+
+```
+int main(){
+    try {
+        int *arr = new int[4];
+        throw std::runtime_error("for example");
+        delete [] arr; // cleanup
+    } catch (const std::exception& ex) {
+        std::cout << "Caught an exception: << ex.what() << "\n";  
+    }
+}
+```
+
+To rectify this issue, we can write a simple `struct`, that contains our pointer to an int, and a constructor & destructor, that deletes our pointer. By putting the responsibility for cleanup into our destructor, which is called when the array goes out of scope during stack unwinding, exceptions will not cause memory leaks. See the amended code below.
+
+```
+struct RAIIPtr {
+    int *ptr_;
+    RAIIPtr(int *p) : ptr_(p) {} // constructor
+    ~RAIIPtr() {delete [] ptr_;} // destructor
+};
+
+int main(){
+    try {
+        int *arr = new int[4];
+        throw std::runtime_error("for example");
+    } catch (const std::exception& ex) { // cleanup is called at the first curly brace
+        std::cout << "Caught an exception: << ex.what() << "\n";  
+    }
+}
+```
+
+This is still relatively dangerous code, as `RAIIPtr` still has a defaulted copy constructor and a copy assignment operator.
+
+to be continued...
+
+## Key Notes on C++ and Compilers:
+
+- Initialization is not the same as assignment, assignment is using an already existing object, initialization is creating a new one. Initialization of a new object calls a copy constructor, assignment to existing objects calls the assignment operator.
+- Destructors are used in C++ to free resources and avoid *leaks*, copy constructors are responsible for duplicating resources to avoid *double frees*.
+- When writing a destructor, you need to write a *copy constructor and a copy assignment operator.*
+- 
+- 
+- 
+- 
+- A good resource to learn what safety in C++ is: https://www.youtube.com/watch?v=CWglkNBUmD4
+
