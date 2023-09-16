@@ -209,7 +209,24 @@ Set up two values left and right as 1 and `num`, and while left is less than rig
     return False
 ```
 
+### Divide and Conquer
 
+Divide and conquer uses recursion (calling a function within the same function) to solve a question more effectively. There are three cases in every divide and conquer algorithm:
+
+1. Base Case - the simplest possible case in which the problem can be solved
+2. Recursive Case - the recursive steps to take, usually calling the function on two halves of the issues
+3. Joining Case - what to do with the two solutions presented by the recursive case.
+
+Consider the **Largest subarray** problem - find the maximum sum of a subarray of an array (up to and including the entire array itself). We can break this question down into each of the three cases:
+
+1. Base case: When the array has length 1, the maximum sum possible is just the value of an element
+2. Recursive case: When the array has length > 1, split the array into two halves, and apply the function to each half. This has the effect of repeatedly doing this recursion on each half until we reach the base case.
+3. Joining case: consider the two halves of an array:
+      6                 3
+[1, -3, 2, 4] and [2, -1, 3, -1]
+From the recursive case, we find that the max possible subarray sum in each half is 6 and 3. However, on joining the two arrays, the maximum possible sum could be made from a subarray containing elements from both halves of the bigger array. To solve this, we can consider the maximum sum starting from the last element in the left array and going to the first element, and the maximum sum starting from the first element in the right array and going to the last element. Combining these sums gives us a "joining" maximum sum, which (in this case) is 10, made from the subarray [2, 4, 2, -1, 3].
+
+We can then return the biggest of the three maximum sums, again (in this case 10).
 
 ### Depth and Breadth First Search
 
