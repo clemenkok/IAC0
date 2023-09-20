@@ -215,18 +215,97 @@ Divide and conquer uses recursion (calling a function within the same function) 
 
 1. Base Case - the simplest possible case in which the problem can be solved
 2. Recursive Case - the recursive steps to take, usually calling the function on two halves of the issues
-3. Joining Case - what to do with the two solutions presented by the recursive case.
+3. Joining Case - what to do with the solutions presented by the recursive case.
 
-Consider the **Largest subarray** problem - find the maximum sum of a subarray of an array (up to and including the entire array itself). We can break this question down into each of the three cases:
+Consider the **Largest subarray problem** - find the maximum sum of a subarray of an array (up to and including the entire array itself). We can break this question down into each of the three cases:
 
-1. Base case: When the array has length 1, the maximum sum possible is just the value of an element
+1. Base case: When the array has length 1, the maximum sum possible is just the value of the only element.
 2. Recursive case: When the array has length > 1, split the array into two halves, and apply the function to each half. This has the effect of repeatedly doing this recursion on each half until we reach the base case.
 3. Joining case: consider the two halves of an array:
-      6                 3
 [1, -3, 2, 4] and [2, -1, 3, -1]
 From the recursive case, we find that the max possible subarray sum in each half is 6 and 3. However, on joining the two arrays, the maximum possible sum could be made from a subarray containing elements from both halves of the bigger array. To solve this, we can consider the maximum sum starting from the last element in the left array and going to the first element, and the maximum sum starting from the first element in the right array and going to the last element. Combining these sums gives us a "joining" maximum sum, which (in this case) is 10, made from the subarray [2, 4, 2, -1, 3].
 
-We can then return the biggest of the three maximum sums, again (in this case 10).
+We can then return the biggest of the three maximum sums, again (in this case 10). This method is $O(n*logn)$, whereas the brute force method of checking every possible subarray is $O(n^2)$.
+
+**Why is this faster?**
+The [Master Method](https://brilliant.org/wiki/master-theorem/) shows us that divide and conquer algorithms can be faster than their brute force counterparts. In this particular case, the master method is $T(n) = 2T(n/2) + O(n)$, which implies $T(n)=O(n*logn)$. This will be covered in more detail in the discrete mathematics course.
+
+Implementation:
+```
+def arrsum(nums):
+    sum = 0
+    for i in nums:
+        sum += i
+    return sum
+
+def maxSubArray(nums):
+    if len(nums) == 0:
+        return 0
+    if len(nums) == 1:
+        return nums[0]
+    mid = len(nums) // 2
+    left = nums[:mid]
+    right = nums[mid:]
+    leftSum = maxSubArray(left)
+    rightSum = maxSubArray(right)
+    
+    joinSum = float('-inf')
+    lsum = float('-inf')
+    leftsum = 0
+    for leftIndex in range(len(left)-1, -1, -1):
+        leftsum += left[leftIndex]
+        if leftsum > lsum:
+            lsum = leftsum
+    rsum = float('-inf')
+    rightsum = 0
+    for rightIndex in range(len(right)):
+        rightsum += right[rightIndex]
+        if rightsum > rsum:
+            rsum = rightsum
+    joinSum = lsum + rsum
+    return max(max(leftSum, rightSum), joinSum)
+
+```
+
+### Dynamic Programming
+
+Dynamic programming is a fancy way of saying that you are keeping track of previous results, as they will be used in future results. Consider the problem of printing up to the nth row of [Pascal's triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle):
+
+n = 5
+Output: 1 1 1 1 2 1 1 3 3 1 1 4 6 4 1 1 5 10 10 5 1
+
+To print the rth item in the nth row, you can use a function called the choose function $\binom{n}{k}=\frac{n!}{(n-r)!r!}$. The simplest way to calculate the factorial is to use a loop, as below:
+```
+def factorial(n):
+  if n==0:
+    return 1
+  sol = 1
+  for i in range(2,n+1):
+    sol *= i
+  return sol
+```
+However, this becomes inefficient, as for all elements you will recalculate the factorial in n steps - when calculating 6!, you will recalculate 5! every single time. This makes the algorithm $O(n^3)$, as you need to print all $O(n^2)$ items, and calculating each item requires $O(n)$ steps.
+
+To optimise this using dynamic programming, we can use a memo to keep track of what we have already calculated and reuse it, as a hashmap lookup is $O(1)$.
+
+Implementation:
+```
+memo = {0:1}
+def factorial(n):
+  if n in memo:
+    return memo[n]
+  else:
+    memo[n] = n*factorial(n-1)
+    return memo[n]
+    
+def soln(n):
+    for i in range(n+1):
+        for r in range(i+1):
+            print(int(factorial(i)/(factorial(i-r)*factorial(r))), end=" ")
+
+```
+
+Now, since the prior factorial values are stored in the memo, each call to factorial is $O(1)$ rather than $O(n)$. This reduces the algorithm from being $O(n^3)$ to $O(n^2)$.
 
 ### Depth and Breadth First Search
 
@@ -282,17 +361,12 @@ We can then pop the value in the heap with the smallest path key, and return the
     return t if len(visit) == n else -1
 ```
 
+## Practice
+**The only way to get better at programming is to practice!**
 
+Reading and learning about these data structures and algorithms is fine, but you can only understand where to apply them through practice. Building an intuition for which data structures/algorithms to use for a given problem can only be done by trying (and failing) lots of other, similar problems. Getting good practice in will be extremely useful for internships/placement assessments.
 
-
-
-
-
-
-
-
-
-
-
-
-
+Links:
+[Leetcode](https://leetcode.com/problemset/all/)
+[Hackerrank](https://hackerrank.com)
+[Awesome Algorithms](https://github.com/tayllan/awesome-algorithms)
