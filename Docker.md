@@ -8,7 +8,7 @@ A container is a standalone executable package of software that includes everyth
 
 Docker lets developers create container images that include applications and its dependencies, then deploy those images to systems that have Docker installed.  
 
-Note: Docker Engine is not the only container runtime. There's also others like ContainerD.  
+A great deep dive into Containers: [Container Security](https://learning.oreilly.com/library/view/container-security/9781492056690/) by Liz Rice  
 
 ## The Container Analogy
 
